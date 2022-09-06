@@ -15,7 +15,7 @@ MONGO_REPLICA=MONGO_REPLICA go run *.go
 ## Docker
 
 ```
-docker build -t rexlow/go-mongo-debug -f Dockerfile .
+docker build -t rexlow/go-mongo-debug -f Dockerfile --platform linux/amd64 .
 
 docker push rexlow/go-mongo-debug:latest
 

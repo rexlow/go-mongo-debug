@@ -1,3 +1,5 @@
+#!/bin/bash
+
 FROM golang:1.17.1
 
 ADD . /app

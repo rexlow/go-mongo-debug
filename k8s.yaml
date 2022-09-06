@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: sandbox
+  name: go-mongo-debug
+  labels:
+    app: go-mongo-debug
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: go-mongo-debug
+  template:
+    metadata:
+      labels:
+        app: go-mongo-debug
+    spec:
+      containers:
+      - name: go-mongo-debug
+        image: rexlow/go-mongo-debug
+        imagePullPolicy: "Always"
+        env:
+          - name: MONGO_USER
+            value: ''
+          - name: MONGO_PASS
+            value: ''
+          - name: MONGO_HOST
+            value: ''
+          - name: MONGO_AUTH
+            value: ''
+          - name: MONGO_REPLICA
+            value: ''
